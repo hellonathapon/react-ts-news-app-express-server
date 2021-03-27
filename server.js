@@ -4,6 +4,7 @@ const port = process.env.PORT || 5000
 const app = express()
 const fetch = require('node-fetch');
 require('dotenv').config();
+const path = require('path');
 
 // CORS middleware
 app.use(function (req, res, next) {
@@ -34,6 +35,14 @@ app.get('/news', fetchNews, (req, res) => {
         res.status(404).send();
     }
 })
+
+// serve static build asset on prod
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    })
+}
 
 // Error hander
 app.use(function (err, req, res, next) {

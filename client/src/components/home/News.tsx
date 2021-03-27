@@ -10,7 +10,7 @@ interface NewsProp {
 
 function ErrorFallback({error, resetErrorBoundary}: {error: any, resetErrorBoundary: any}) {
     return (
-      <img src={ImgPlaceholderPath} alt="unable to load image"/>
+      <img src={ImgPlaceholderPath} alt="thumbnail"/>
     )
 }
 
@@ -21,7 +21,7 @@ const News:React.FC<NewsProp> = ({data}) => {
     return (
         <div className="home-grid-item home-grid-item-3 news">
             { data ? data.slice(6).map((n,i) => (
-                <a href={n.url} target="_blank" key={i} className="news-card">
+                <a href={n.url} target="_blank" rel="noreferrer" key={i} className="news-card">
                     <figure>
                         {/* For handling component error on rendering */}
                         <ErrorBoundary

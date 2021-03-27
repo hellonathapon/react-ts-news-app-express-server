@@ -10,7 +10,7 @@ const Header = () => {
                     <img src={logo} className="App-logo" alt="logo" />
                 </div>
                 <article>
-                    <a href="#">Source Code</a>
+                    <a href="https://github.com/hellonathapon/react-ts-news-app" target="_blank" rel="noreferrer">Source Code</a>
                 </article>
             </div>
         </div>

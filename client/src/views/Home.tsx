@@ -8,8 +8,6 @@ const Home = (): JSX.Element => {
 
     // custom hook
     const data = useFetch<INews>('http://localhost:5000/news');
-    console.log(data)
-
 
     return (
         <Layout>

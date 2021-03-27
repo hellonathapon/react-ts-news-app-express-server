@@ -10,11 +10,10 @@ const Img = ({url}: IImg) => {
         srcList: url,
         useSuspense: true,
     })
-    console.log('image loaded = ' + src)
     if (error) {
-        return <img src={ImgPlaceholderPath} />
+        return <img src={ImgPlaceholderPath} alt="thumbnail" />
     }else {
-        return <img src={src} />
+        return <img src={src} alt="thumbnail"/>
     }
 }
 
