@@ -1,0 +1,226 @@
+:root {
+  --col1-dark: #2f495e;
+  --hover-purple: hsl(245deg 100% 60%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  color: var(--col1-dark);
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+}
+.header .header-brand {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.header .header-brand .images {
+  display: flex;
+  align-items: center;
+}
+.header .header-brand .images .App-logo {
+  height: 10vmin;
+  pointer-events: none;
+  padding: 0;
+  margin: 0;
+}
+.header .header-brand .ts-logo {
+  height: 40px;
+}
+.header .header-brand article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header-brand article a {
+  text-decoration: none;
+  color: var(--col1-dark);
+}
+.header .header-brand article a:hover {
+  color: var(--hover-purple);
+}
+
+.home-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /* gap: 5px; apply gap to all the children that causes full strech width
+    child grid item has extra gap space  
+  */
+}
+.home-grid .error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.home-grid .home-grid-item-1 {
+  grid-column: 1 / span 7;
+}
+.home-grid .home-grid-item-2 {
+  grid-column: 8 / span 12;
+}
+.home-grid .home-grid-item-3 {
+  grid-column: 1 / -1;
+}
+
+.breaking {
+  height: 500px;
+  max-height: 500px;
+  margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+.breaking .card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all .3s ease-in-out;
+}
+.breaking:hover .card-image {
+  transform: scale(1.1);
+}
+.breaking a .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: .7;
+}
+.breaking article {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 20px);
+}
+.breaking article > * {
+  color: #fff;
+  text-align-last: left;
+  text-align: start;
+}
+.breaking .source {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #fff;
+}
+
+.trending {
+  margin-top: 80px;
+  margin-left: .5rem;
+}
+.trending-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 3px;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+.trending .trending-card:hover h3 a {
+  color: var(--hover-purple);
+}
+.trending .trending-card h3 {
+  text-align: start;
+  text-align-last: left;
+}
+.trending .trending-card h3 a {
+  color: #2f495e;
+  text-decoration: none;
+  text-align: start;
+  text-align-last: left;
+}
+.trending .trending-card small {
+  margin-top: .3rem;
+  text-align: start;
+  text-align-last: left;
+  width: 100%;
+}
+
+.news {
+  margin-top: .5rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .5rem;
+  box-sizing: border-box;
+}
+.news .news-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #2f495e;
+  overflow: hidden;
+
+}
+.news .news-card:hover article p {
+  color: var(--hover-purple);
+}
+.news .news-card figure {
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  overflow: hidden;
+}
+.news .news-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.news .news-card article {
+  padding: 0 .5rem;
+  text-align-last: left;
+  text-align: start;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .home-grid .home-grid-item {
+    grid-column: 1 / span 12; 
+  }
+  .trending {
+    margin-right: .5rem;
+  }
+  .news {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 .5rem;
+    margin-right: .5rem;
+  }
+} 
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
