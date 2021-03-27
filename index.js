@@ -1,6 +1,4 @@
 const express = require('express');
-const { reset } = require('nodemon');
-const port = process.env.PORT || 5000
 const app = express()
 const fetch = require('node-fetch');
 require('dotenv').config();
@@ -47,7 +45,8 @@ if (process.env.NODE_ENV === 'production') {
 // Error hander
 app.use(function (err, req, res, next) {
     console.log(err)
-    return reset.send(500).send(err)
+    return res.send(500).send(err)
 })
 
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`))

@@ -7,7 +7,7 @@ import { INews } from '.././interfaces/interfaces';
 const Home = (): JSX.Element => {
 
     // custom hook
-    const data = useFetch<INews>('http://localhost:5000/news');
+    const data = useFetch<INews>('https://react-ts-news-app.herokuapp.com/news');
 
     return (
         <Layout>
