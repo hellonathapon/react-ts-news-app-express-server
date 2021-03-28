@@ -26,6 +26,8 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  height: 70px;
+  padding: 0 1rem;
 }
 .header .header-brand .images {
   display: flex;
@@ -33,6 +35,7 @@
 }
 .header .header-brand .images .App-logo {
   height: 10vmin;
+  min-height: 40px;
   pointer-events: none;
   padding: 0;
   margin: 0;
@@ -161,11 +164,12 @@
 
 .news {
   margin-top: .5rem;
-  width: 100%;
   display: grid;
+  /* background: pink; */
   grid-template-columns: repeat(4, 1fr);
   gap: .5rem;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .news .news-card {
   border: 1px solid #e2e8f0;
@@ -190,7 +194,7 @@
   object-fit: cover;
 }
 .news .news-card article {
-  padding: 0 .5rem;
+  padding: .5rem;
   text-align-last: left;
   text-align: start;
 }
@@ -200,11 +204,20 @@
   .home-grid .home-grid-item {
     grid-column: 1 / span 12; 
   }
+  .header .header-brand {
+    padding: 0 .5rem;
+
+  }
+  .breaking {
+    margin-top: 70px;
+  }
   .trending {
     margin-right: .5rem;
+    margin-top: 1rem;
   }
   .news {
     grid-template-columns: 1fr 1fr;
+    gap: .2rem;
     margin: 0 .5rem;
     margin-right: .5rem;
   }

@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react';
 import { INews } from '../../interfaces/interfaces';
-import Img from '../../ImageLoader'
+import ImageLoader from '../../ImageLoader'
 import {ErrorBoundary} from 'react-error-boundary'
 import ImgPlaceholderPath from '../../img-placeholder.png'
 
@@ -31,7 +31,7 @@ const News:React.FC<NewsProp> = ({data}) => {
                             }}
                         >
                             <Suspense fallback={<div>Loading...</div>}>
-                                <Img url={n.urlToImage}/>
+                                <ImageLoader url={n.urlToImage}/>
                             </Suspense>
                         </ErrorBoundary>
                     </figure>
